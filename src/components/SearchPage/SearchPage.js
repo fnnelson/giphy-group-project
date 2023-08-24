@@ -35,7 +35,7 @@ history.push('/favorites');
 
         <div>
             {giphyList.map((gif) => {
-                return <GifItem key={gif.id} gif={gif}/>
+                return <GifItem key={gif.id} gif={gif.images.original.url}/>
             })}
         </div>
         <button onClick={handleFavorites}>
