@@ -21,7 +21,7 @@ history.push('/favorites');
 
     return( 
     <div>
-        <h1>Giphy Search!</h1>;
+        <h1>Giphy Search!</h1>
     
             <form onSubmit={handleSubmit}>
                 <input type='text'

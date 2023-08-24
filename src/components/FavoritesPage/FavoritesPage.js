@@ -1,7 +1,21 @@
 import React from 'react';
+import axios from 'axios';
+
 
 export function FavoritesPage() {
-    return <h1>
-        Favorites
-    </h1>;
+    
+    const getFavorites = () => {
+        axios.get('/api/favorite')
+        .then(response => {
+            
+        })
+    }
+    
+    
+    return <div>
+    <h1>Favorites</h1>
+
+    
+
+    </div>
 }
