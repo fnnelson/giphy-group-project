@@ -1,9 +1,14 @@
 import React from 'react';
+import { Header } from '../Header/Header';
+import { SearchPage } from '../SearchPage/SearchPage';
+import { FavoritesPage } from '../FavoritesPage/FavoritesPage';
 
-function App(props) {
+function App() {
   return (
     <div>
-      <h1>Giphy Search!</h1>
+      <Header />
+      <SearchPage />
+      <FavoritesPage />
     </div>
   );
 }
