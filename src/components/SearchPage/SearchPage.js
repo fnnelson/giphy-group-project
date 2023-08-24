@@ -13,6 +13,12 @@ export function SearchPage() {
     dispatch({type: 'FETCH_SEARCH', payload: newSearch })
    }
 
+   const handleFavorites = () => {
+// axios.post
+
+history.push('/favorites');
+   }
+
     return( 
     <div>
         <h1>Giphy Search!</h1>;
@@ -32,6 +38,9 @@ export function SearchPage() {
                 return <GifItem key={gif.id} gif={gif}/>
             })}
         </div>
+        <button onClick={handleFavorites}>
+            Go To Favorites
+            </button>
 
 
     </div>
