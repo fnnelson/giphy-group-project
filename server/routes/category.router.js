@@ -17,4 +17,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.put('/:id/:category', (req, res) => {
+  const queryParams = [req.params.id, req.params.category];
+  const sqlText = `UPDATE "favorites" SET "category_id"=$2 WHERE "id" = $1;`
+  pool.query(sqlText, queryParams)
+    .then((result) => {
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
+      res.sendStatus(500);
+    });
+})
+
 module.exports = router;

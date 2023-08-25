@@ -30,7 +30,7 @@ export function FavoritesPage() {
             {favList.map((fav) => {
                 console.log('fav in map:', fav)
                 return <div key={fav.id} >
-                    <img src={fav.url}/>
+                    <FavItem fav={fav}/>
                     </div>
             })}
                 </div>
