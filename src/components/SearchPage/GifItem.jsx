@@ -6,11 +6,12 @@ import axios from "axios";
 
 function GifItem({ gif}) {
    
+    const dispatch = useDispatch();
+
     const favClick = () => {
-        axios.post ('/api/favorite', gif)
         console.log('favorites in handle favorites:', gif)
+        axios.post ('/api/favorite', gif)
         .then(response => {
-            dispatchEvent({type: 'FETCH_SEARCH'})
         })
     }
    
@@ -21,7 +22,7 @@ function GifItem({ gif}) {
             </div>
 
             <div>
-                <button onClick={favClick()}>Favorite
+                <button onClick={() => favClick()}>Favorite
 
                 </button>
             </div>
