@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GifItem from './GifItem';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export function SearchPage() {
 
@@ -10,6 +11,8 @@ export function SearchPage() {
     const dispatch = useDispatch();
     const giphyList = useSelector(store => store.giphyList)
     // const [favorites, setFavorites] = useState([]);
+
+    const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,8 +22,6 @@ export function SearchPage() {
 
 
     const handleFavorites = () => {
-
-
         history.push('/favorites');
     }
 
@@ -38,18 +39,15 @@ export function SearchPage() {
                 </button>
             </form>
 
+            <button onClick={handleFavorites}>
+                Go To Favorites
+            </button>
+
             <div>
                 {giphyList.map((gif) => {
                     return <GifItem key={gif.id} gif={gif.images.original.url} />
                 })}
             </div>
-            <button onClick={handleFavorites}>
-                Go To Favorites
-            </button>
-
-
         </div>
-
-
     )
 }
