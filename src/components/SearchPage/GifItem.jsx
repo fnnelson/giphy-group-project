@@ -1,25 +1,31 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 
-function GifItem({gif}) {
-    
-    const [favorites, setFavorites] = useState([]);
+
+function GifItem({ gif}) {
+   
+    const dispatch = useDispatch();
 
     const favClick = () => {
-setFavorites([...favorites, gif])
+        console.log('favorites in handle favorites:', gif)
+        axios.post ('/api/favorite', gif)
+        .then(response => {
+        })
     }
-    
-    return(
+   
+  
+    return (
         <>
-        <div><img src={gif}/>
-        </div>
+            <div><img src={gif} />
+            </div>
 
-        <div>
-            <button onClick={favClick}>Favorite
+            <div>
+                <button onClick={() => favClick()}>Favorite
 
-            </button>
-        </div>
+                </button>
+            </div>
 
         </>
 
