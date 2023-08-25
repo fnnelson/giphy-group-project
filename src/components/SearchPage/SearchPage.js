@@ -5,6 +5,7 @@ import GifItem from './GifItem';
 import axios from 'axios';
 
 export function SearchPage() {
+
     const [newSearch, setNewSearch] = useState('');
     const dispatch = useDispatch();
     const giphyList = useSelector(store => store.giphyList)
@@ -29,7 +30,7 @@ export function SearchPage() {
 
             <form onSubmit={handleSubmit}>
                 <input type='text'
-                    placeholder='Search for GIFs! '
+                    placeholder='Search for GIFs!'
                     value={newSearch}
                     onChange={(event) => setNewSearch(event.target.value)}
                 />
