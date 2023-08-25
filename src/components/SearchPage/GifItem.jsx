@@ -4,18 +4,19 @@ import axios from "axios";
 
 
 
-function GifItem({ gif}) {
-   
+function GifItem({ gif }) {
+
     const dispatch = useDispatch();
 
     const favClick = () => {
         console.log('favorites in handle favorites:', gif)
-        axios.post ('/api/favorite', gif)
-        .then(response => {
-        })
+        const gifObj = { url: gif }
+        axios.post('/api/favorite', gifObj)
+            .then(response => {
+            })
     }
-   
-  
+
+
     return (
         <>
             <div><img src={gif} />
