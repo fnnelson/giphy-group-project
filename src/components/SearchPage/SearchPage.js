@@ -25,7 +25,7 @@ history.push('/favorites');
     
             <form onSubmit={handleSubmit}>
                 <input type='text'
-                    placeholder='Search for GIFs! '
+                    placeholder='Search for GIFs!'
                     value={newSearch}
                     onChange={(event) => setNewSearch(event.target.value) }
                 />
